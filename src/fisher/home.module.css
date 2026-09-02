@@ -1,0 +1,56 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.regions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.region {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  min-height: var(--tap-lg);
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  text-align: left;
+  color: inherit;
+}
+
+.region .emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.region .label {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.region .status {
+  font-weight: 700;
+  color: var(--ocean);
+}
+
+html[data-simple='true'] .region .label {
+  font-size: 1.05rem;
+}
+
+.ask {
+  width: 100%;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+}

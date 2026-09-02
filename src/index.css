@@ -1,0 +1,301 @@
+/* Coastal civic-tech tokens. Designed for Devanagari first. */
+
+:root {
+  --ocean: #0b3d5c;
+  --ocean-deep: #082c43;
+  --teal: #1f6f6a;
+  --sand: #c9923a;
+  --sand-press: #b4802e;
+  --offwhite: #f4f0e6;
+  --paper: #fffdf8;
+  --ink: #1c2a33;
+  --ink-soft: #3d4f5c;
+  --line: #d5cfc2;
+  --safe: #1b6b45;
+  --safe-bg: #e5f3ea;
+  --caution: #8a6a12;
+  --caution-bg: #f7efd4;
+  --emergency: #a31d1d;
+  --emergency-bg: #f8e4e2;
+  --sos: #9b1c1c;
+
+  --radius: 8px;
+  --tap: 56px;
+  --tap-lg: 64px;
+  --space: 16px;
+  --font: 'Noto Sans Devanagari', 'Source Sans 3', system-ui, sans-serif;
+  --shadow: 0 1px 2px rgba(12, 40, 58, 0.08);
+
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: #e8e2d4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-simple='true'] {
+  --tap: 64px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100svh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sand);
+  outline-offset: 2px;
+}
+
+.app-root {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, #e8e2d4 0%, #efe8d8 100%);
+}
+
+.phone {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100svh;
+  background: var(--offwhite);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.btn {
+  min-height: var(--tap);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: var(--sand);
+  color: var(--ocean-deep);
+}
+
+.btn-primary:active {
+  background: var(--sand-press);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ocean);
+  border: 1px solid var(--line);
+}
+
+.btn-choice {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--paper);
+  border: 2px solid var(--ocean);
+  color: var(--ocean);
+  text-align: center;
+}
+
+.btn-choice[data-selected='true'] {
+  background: var(--ocean);
+  color: var(--paper);
+}
+
+.btn-sos {
+  background: var(--sos);
+  color: #fff;
+  min-height: var(--tap);
+  min-width: var(--tap);
+}
+
+.icon-word {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.icon-word .icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.icon-word .word {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.icon-word .value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ocean);
+}
+
+.status-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.status-mark[data-status='safe'] {
+  color: var(--safe);
+}
+
+.status-mark[data-status='caution'] {
+  color: var(--caution);
+}
+
+.status-mark[data-status='emergency'] {
+  color: var(--emergency);
+}
+
+.sathi {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.sathi-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.sathi-line {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.interaction-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.interaction-bar button {
+  min-height: var(--tap);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ocean);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+html[data-simple='true'] .interaction-bar button {
+  font-size: 0.9rem;
+}
+
+.notice {
+  background: var(--caution-bg);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.showme-dim {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 44, 67, 0.55);
+  z-index: 20;
+}
+
+.showme-panel {
+  position: fixed;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 406px;
+  z-index: 30;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.showme-panel p {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.showme-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.showme-actions button {
+  flex: 1;
+}
+
+.is-showme {
+  position: relative;
+  z-index: 25;
+  box-shadow: 0 0 0 3px var(--sand);
+  background: var(--paper);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

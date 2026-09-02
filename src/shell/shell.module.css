@@ -1,0 +1,101 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background: var(--offwhite);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px 8px;
+  background: var(--ocean);
+  color: var(--paper);
+}
+
+.brand {
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  min-height: 44px;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.brand span {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.langToggle {
+  min-height: 44px;
+  min-width: 44px;
+  border: 1px solid rgba(255, 253, 248, 0.35);
+  background: transparent;
+  color: var(--paper);
+  border-radius: var(--radius);
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+.main {
+  flex: 1;
+  padding: 12px 16px 16px;
+  padding-bottom: calc(var(--tap) * 3.6);
+}
+
+.dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background: var(--offwhite);
+  padding: 8px 16px calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sosRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottomNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4px;
+}
+
+.bottomNav button {
+  min-height: var(--tap);
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.bottomNav button[data-active='true'] {
+  color: var(--ocean);
+  background: #e7eef2;
+}
+
+html[data-simple='true'] .bottomNav button {
+  font-size: 0.85rem;
+}
