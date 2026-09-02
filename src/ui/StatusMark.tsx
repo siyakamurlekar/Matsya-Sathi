@@ -1,4 +1,4 @@
-import type { SafetyStatus } from './types'
+type SafetyStatus = 'safe' | 'caution' | 'emergency'
 
 const words = {
   safe: { kn: 'सुरक्षित', en: 'SAFE', icon: '🟢' },
@@ -13,7 +13,7 @@ type Props = {
 
 /** Always icon + word + colour. Never colour alone. */
 export function StatusMark({ status, language }: Props) {
-  const item = words[status]
+ const item = words[status as keyof typeof words]
   return (
     <span className="status-mark" data-status={status}>
       <span aria-hidden="true">{item.icon}</span>
